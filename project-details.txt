@@ -1,0 +1,14 @@
+Basit Alışveriş Uygulaması
+
+Detayları console.log() ile yazdırıp, soruları prompt ile sorabilirsiniz. İsterseniz DOM ile de yapabilirsiniz. (tercihen dom ile yapılmalı)
+
+v1 
+Uygulama açıldığında belirlediğiniz bir takım ürünler listeleyin.
+Bir de boş sepetimiz olsun (array). Kullanıcıya hangi ürünü eklemek istediğini soralım.
+Sepete ürün eklendikçe listedeki ürünü taşıyalım ve sepetteki ürünler olarak yazılsın.
+v2 
+Ürünlerin stok durumlarını ayrı bir dizi içinde aynı sırada tutalım. Eğer stok 0 kaldıysa sepete eklenemesin.
+v3 
+Ürünlerin fiyatları da olsun ve toplam sepet tutarı da ekleyelim.
+
+NOT: Versiyonlu ödevlerin amacı tamamlanan bir önceki versiyonu koruyup (kopyasını alarak) yeni versiyonda üstüne ekleyip geliştirmek. Tamamlanan versiyonun kopyası alınmazsa bir aradan sonra işler karışabilir :)
