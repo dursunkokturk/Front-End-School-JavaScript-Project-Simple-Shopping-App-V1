@@ -183,20 +183,34 @@ const products = [
 ];
 
 console.log("Tüm Sebze ve Meyveler");
-for (let i=0;i<products.length;i++){
+for (let i = 0; i < products.length; i++) {
   console.log(`Ürün Adı : ${products[i].name} Ürün Türü : ${products[i].type} Ürün Rengi : ${products[i].color} Ürün Kalarisi : ${products[i].calories} Ürün Sezonu : ${products[i].season} Ürün Vitamin Türü : ${products[i].vitamins} Ürün Tatlı Mı : ${products[i].isSweet}`);
 }
 
 console.log("Tüm Sebzeler");
-for (let i=0;i<products.length;i++){
-  if(products[i].type === "sebze"){
+for (let i = 0; i < products.length; i++) {
+  if (products[i].type === "sebze") {
     console.log(`Ürün Adı : ${products[i].name} Ürün Türü : ${products[i].type} Ürün Rengi : ${products[i].color} Ürün Kalarisi : ${products[i].calories} Ürün Sezonu : ${products[i].season} Ürün Vitamin Türü : ${products[i].vitamins} Ürün Tatlı Mı : ${products[i].isSweet}`);
   }
 }
 
 console.log("Tüm Meyveler");
-for (let i=0;i<products.length;i++){
-  if(products[i].type === "meyve"){
+for (let i = 0; i < products.length; i++) {
+  if (products[i].type === "meyve") {
     console.log(`Ürün Adı : ${products[i].name} Ürün Türü : ${products[i].type} Ürün Rengi : ${products[i].color} Ürün Kalarisi : ${products[i].calories} Ürün Sezonu : ${products[i].season} Ürün Vitamin Türü : ${products[i].vitamins} Ürün Tatlı Mı : ${products[i].isSweet}`);
   }
+}
+
+for (const product of products) {
+  allVegtablesAndFruits.innerHTML += `
+    <tr>
+      <td>${product.name}</td>
+      <td>${product.type}</td>
+      <td>${product.color}</td>
+      <td>${product.calories}</td>
+      <td>${product.season}</td>
+      <td>${product.vitamins}</td>
+      <td>${product.isSweet ? "Evet":"Hayır"}</td>
+    </tr>
+    `;
 }
