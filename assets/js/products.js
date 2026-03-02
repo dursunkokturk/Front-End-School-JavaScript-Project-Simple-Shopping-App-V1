@@ -187,19 +187,23 @@ for (let i = 0; i < products.length; i++) {
   console.log(`Ürün Adı : ${products[i].name} Ürün Türü : ${products[i].type} Ürün Rengi : ${products[i].color} Ürün Kalarisi : ${products[i].calories} Ürün Sezonu : ${products[i].season} Ürün Vitamin Türü : ${products[i].vitamins} Ürün Tatlı Mı : ${products[i].isSweet}`);
 }
 
+/*
 console.log("Tüm Sebzeler");
 for (let i = 0; i < products.length; i++) {
   if (products[i].type === "sebze") {
     console.log(`Ürün Adı : ${products[i].name} Ürün Türü : ${products[i].type} Ürün Rengi : ${products[i].color} Ürün Kalarisi : ${products[i].calories} Ürün Sezonu : ${products[i].season} Ürün Vitamin Türü : ${products[i].vitamins} Ürün Tatlı Mı : ${products[i].isSweet}`);
   }
 }
+*/
 
+/*
 console.log("Tüm Meyveler");
 for (let i = 0; i < products.length; i++) {
   if (products[i].type === "meyve") {
     console.log(`Ürün Adı : ${products[i].name} Ürün Türü : ${products[i].type} Ürün Rengi : ${products[i].color} Ürün Kalarisi : ${products[i].calories} Ürün Sezonu : ${products[i].season} Ürün Vitamin Türü : ${products[i].vitamins} Ürün Tatlı Mı : ${products[i].isSweet}`);
   }
 }
+*/
 
 for (const product of products) {
   allVegetablesAndFruits.innerHTML += `
@@ -210,13 +214,14 @@ for (const product of products) {
       <td>${product.calories}</td>
       <td>${product.season}</td>
       <td>${product.vitamins}</td>
-      <td>${product.isSweet ? "Evet":"Hayır"}</td>
+      <td>${product.isSweet ? "Evet" : "Hayır"}</td>
     </tr>
     `;
 }
 
+/*
 for (const product of products) {
-  if(product.type === "sebze"){
+  if (product.type === "sebze") {
     allVegetables.innerHTML += `
       <tr>
         <td>${product.name}</td>
@@ -225,14 +230,16 @@ for (const product of products) {
         <td>${product.calories}</td>
         <td>${product.season}</td>
         <td>${product.vitamins}</td>
-        <td>${product.isSweet ? "Evet":"Hayır"}</td>
+        <td>${product.isSweet ? "Evet" : "Hayır"}</td>
       </tr>
       `;
   }
 }
+*/
 
+/*
 for (const product of products) {
-  if(product.type === "meyve"){
+  if (product.type === "meyve") {
     allFruits.innerHTML += `
       <tr>
         <td>${product.name}</td>
@@ -241,8 +248,33 @@ for (const product of products) {
         <td>${product.calories}</td>
         <td>${product.season}</td>
         <td>${product.vitamins}</td>
-        <td>${product.isSweet ? "Evet":"Hayır"}</td>
+        <td>${product.isSweet ? "Evet" : "Hayır"}</td>
       </tr>
       `;
+  }
+}
+*/
+
+let userBasket = [];
+
+let userProducts = prompt("Eklemek İstediğiniz Ürünleri Giriniz");
+
+if (userProducts) {
+  let found = false;
+
+  for (let i = 0; i < products.length; i++) {
+    if (products[i].name.toLowerCase() === userProducts.toLowerCase()) {
+      userBasket.push(products[i]);
+      products.splice(i, 1);
+
+      found = true;
+      break;
+    }
+  }
+  if (found) {
+    console.log("Ürün sepete eklendi.");
+    console.log("Sepetiniz:", userBasket);
+  } else {
+    console.log("Ürün bulunamadı!");
   }
 }
